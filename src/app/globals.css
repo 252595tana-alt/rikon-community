@@ -57,8 +57,9 @@ svg { flex: 0 0 auto; }
 .desktop-nav .utility-nav-cta { min-height: 40px; padding: 0 15px; border: 1px solid rgba(47,128,99,.2); border-radius: 999px; background: var(--mint-pale); color: var(--mint-deep); font-weight: 800; }
 .desktop-nav .utility-nav-cta:hover { background: var(--mint); color: var(--ink); }
 .header-actions { display: flex; align-items: center; gap: 16px; }
-.emergency-link { min-height: 44px; display: inline-flex; align-items: center; gap: 5px; color: #ad594a; font-size: 11px; font-weight: 700; }
-.emergency-link svg { width: 15px; }
+.emergency-link { min-height: 42px; padding: 0 14px; display: inline-flex; align-items: center; gap: 7px; border: 1px solid rgba(173,70,54,.28); border-radius: 999px; background: #fff0ea; color: #a64234; font-size: 13px; font-weight: 850; letter-spacing: .01em; box-shadow: 0 7px 18px rgba(173,70,54,.09); transition: color .2s, background .2s, border-color .2s, transform .2s, box-shadow .2s; }
+.emergency-link:hover { border-color: rgba(173,70,54,.48); background: #ffe3d9; color: #8e3429; transform: translateY(-1px); box-shadow: 0 10px 24px rgba(173,70,54,.14); }
+.emergency-link svg { width: 17px; }
 .header-login { min-height: 44px; padding: 0 17px; display: inline-flex; align-items: center; gap: 7px; border: 1px solid rgba(47,128,99,.28); border-radius: 999px; background: var(--white); font-size: 12px; font-weight: 700; transition: background .2s, color .2s; }
 .header-login:hover { background: var(--mint-pale); color: var(--mint-deep); }
 .header-login svg { width: 15px; }
@@ -425,7 +426,8 @@ svg { flex: 0 0 auto; }
   .mobile-nav a.is-active { color: #237652; }
   .mobile-nav a.is-active svg { fill: rgba(101,200,156,.18); }
   .site-header__inner { width: calc(100% - 28px); }
-  .emergency-link { font-size: 10px; }
+  .emergency-link { min-height: 40px; padding-inline: 11px; font-size: 11px; }
+  .emergency-link svg { width: 15px; }
   .brand-mark { width: 30px; height: 30px; }
   .brand-copy strong { font-size: 13px; }
   .home-page__webgl { left: -65%; right: -65%; transform: translateY(-28%); }
