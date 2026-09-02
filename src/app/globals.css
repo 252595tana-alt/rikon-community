@@ -80,7 +80,9 @@ svg { flex: 0 0 auto; }
 .eyebrow > span { width: 27px; height: 1px; background: var(--coral); }
 .eyebrow--light { color: var(--ink-soft); }
 
-.home-page { background: linear-gradient(90deg, #f7fcff 0%, #f0faf4 58%, #fff1e7 100%); }
+.home-page { position: relative; isolation: isolate; background: linear-gradient(90deg, #f7fcff 0%, #f0faf4 58%, #fff1e7 100%); }
+.home-page__webgl { position: fixed; z-index: 0; top: 76px; left: -10%; right: -10%; height: calc(100svh - 76px); opacity: .36; transform: translateY(-34%); pointer-events: none; }
+.home-page > section { position: relative; z-index: 1; }
 .hero { position: relative; min-height: calc(100svh - 76px); overflow: hidden; background: radial-gradient(circle at 50% 8%, rgba(188,235,213,.82), transparent 36%), radial-gradient(circle at 12% 72%, rgba(237,247,255,.9), transparent 32%); color: var(--ink); }
 .hero::after { content: ""; position: absolute; inset: auto -10% -52% 28%; height: 70%; border: 1px solid rgba(47,128,99,.11); border-radius: 50%; transform: rotate(-8deg); }
 .hero-noise { position: absolute; inset: 0; opacity: .035; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E"); }
@@ -373,6 +375,7 @@ svg { flex: 0 0 auto; }
   .desktop-nav, .header-login { display: none; }
   .site-header__inner { justify-content: space-between; }
   .emergency-link { display: inline-flex; }
+  .home-page__webgl { top: 64px; left: -45%; right: -45%; height: calc(100svh - 64px); opacity: .38; transform: translateY(-27%); }
   .hero { min-height: calc(100svh - 64px); }
   .hero-inner { min-height: calc(100svh - 64px); padding: 88px 0 76px; }
   .hero h1 { font-size: clamp(41px,11.4vw,62px); }
@@ -423,6 +426,7 @@ svg { flex: 0 0 auto; }
   .emergency-link { font-size: 10px; }
   .brand-mark { width: 30px; height: 30px; }
   .brand-copy strong { font-size: 13px; }
+  .home-page__webgl { left: -65%; right: -65%; transform: translateY(-28%); }
   .hero-inner { padding: 72px 0 64px; }
   .hero-art { inset: 0 -65%; height: 100%; margin: 0; transform: translateY(-28%); }
   .hero-copy { padding-top: 104px; }

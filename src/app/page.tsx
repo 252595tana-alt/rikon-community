@@ -13,6 +13,10 @@ import { HeroCanvas } from "@/components/webgl/hero-canvas";
 export default function Home() {
   return (
     <main className="home-page" id="main-content">
+      <div className="home-page__webgl" aria-hidden="true">
+        <HeroCanvas />
+      </div>
+
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-noise" aria-hidden="true" />
         <div className="hero-inner shell">
@@ -42,7 +46,6 @@ export default function Home() {
           </div>
 
           <div className="hero-art" aria-label="それぞれの悩みが安心できる場所へつながっていく様子">
-            <HeroCanvas />
             <div className="orbit-label orbit-label--one"><span />お金・生活</div>
             <div className="orbit-label orbit-label--two"><span />子育て</div>
             <div className="orbit-label orbit-label--three"><span />これから</div>
