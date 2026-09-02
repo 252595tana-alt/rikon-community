@@ -12,7 +12,7 @@ import { HeroCanvas } from "@/components/webgl/hero-canvas";
 
 export default function Home() {
   return (
-    <main id="main-content">
+    <main className="home-page" id="main-content">
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-noise" aria-hidden="true" />
         <div className="hero-inner shell">
