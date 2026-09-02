@@ -11,12 +11,14 @@ const vertexShader = `
 
   void main() {
     vec3 p = position;
-    p.y += sin(uTime * 0.32 + position.x * 1.4 + position.z) * 0.035;
-    p.x += cos(uTime * 0.2 + position.y * 2.0) * 0.018;
+    p.y += sin(uTime * 0.55 + position.x * 1.4 + position.z) * 0.06;
+    p.x += cos(uTime * 0.38 + position.y * 2.0) * 0.035;
+    p.z += sin(uTime * 0.28 + position.x * 0.8) * 0.04;
     vec4 modelViewPosition = modelViewMatrix * vec4(p, 1.0);
     gl_Position = projectionMatrix * modelViewPosition;
-    gl_PointSize = aScale * (20.0 / max(0.2, -modelViewPosition.z));
-    vAlpha = 0.38 + 0.35 * sin(uTime * 0.5 + aScale);
+    float pulse = 0.88 + 0.18 * sin(uTime * 0.9 + aScale * 2.1);
+    gl_PointSize = aScale * pulse * (20.0 / max(0.2, -modelViewPosition.z));
+    vAlpha = 0.46 + 0.32 * sin(uTime * 0.75 + aScale);
   }
 `;
 
@@ -39,7 +41,12 @@ function seeded(index: number) {
 
 function Scene() {
   const group = useRef<THREE.Group>(null);
+  const particles = useRef<THREE.Points>(null);
+  const strands = useRef<THREE.LineSegments>(null);
+  const ring = useRef<THREE.LineSegments>(null);
   const material = useRef<THREE.ShaderMaterial>(null);
+  const strandMaterial = useRef<THREE.LineBasicMaterial>(null);
+  const ringMaterial = useRef<THREE.LineBasicMaterial>(null);
 
   const particleGeometry = useMemo(() => {
     const count = 920;
@@ -104,15 +111,46 @@ function Scene() {
 
   useFrame((state, delta) => {
     if (material.current) material.current.uniforms.uTime.value += delta;
+
+    const time = state.clock.getElapsedTime();
+    const easing = 1 - Math.exp(-delta * 2.8);
+
     if (group.current) {
-      group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, state.pointer.x * 0.14, 0.035);
-      group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, -state.pointer.y * 0.08, 0.035);
+      const targetY = -0.08 + state.pointer.x * 0.2 + Math.sin(time * 0.18) * 0.06;
+      const targetX = 0.06 - state.pointer.y * 0.12 + Math.cos(time * 0.22) * 0.035;
+      group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, targetY, easing);
+      group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, targetX, easing);
+      group.current.rotation.z = -0.04 + Math.sin(time * 0.16) * 0.025;
+    }
+
+    if (particles.current) {
+      particles.current.rotation.z = Math.sin(time * 0.2) * 0.025;
+      particles.current.position.x = Math.sin(time * 0.32) * 0.08;
+      particles.current.position.y = Math.cos(time * 0.28) * 0.045;
+    }
+
+    if (strands.current) {
+      strands.current.rotation.z = Math.sin(time * 0.24) * 0.018;
+      strands.current.position.y = Math.sin(time * 0.38) * 0.045;
+    }
+
+    if (ring.current) {
+      const pulse = 1 + Math.sin(time * 0.72) * 0.035;
+      ring.current.scale.setScalar(pulse);
+    }
+
+    if (strandMaterial.current) {
+      strandMaterial.current.opacity = 0.28 + Math.sin(time * 0.55) * 0.07;
+    }
+
+    if (ringMaterial.current) {
+      ringMaterial.current.opacity = 0.58 + Math.sin(time * 0.72) * 0.12;
     }
   });
 
   return (
     <group ref={group} rotation={[0.06, -0.08, -0.04]}>
-      <points geometry={particleGeometry}>
+      <points ref={particles} geometry={particleGeometry}>
         <shaderMaterial
           ref={material}
           vertexShader={vertexShader}
@@ -123,11 +161,11 @@ function Scene() {
           blending={THREE.NormalBlending}
         />
       </points>
-      <lineSegments geometry={strandGeometry}>
-        <lineBasicMaterial color="#5f9f85" transparent opacity={0.28} blending={THREE.NormalBlending} />
+      <lineSegments ref={strands} geometry={strandGeometry}>
+        <lineBasicMaterial ref={strandMaterial} color="#5f9f85" transparent opacity={0.28} blending={THREE.NormalBlending} />
       </lineSegments>
-      <lineSegments geometry={ringGeometry}>
-        <lineBasicMaterial color="#df8f77" transparent opacity={0.64} blending={THREE.NormalBlending} />
+      <lineSegments ref={ring} geometry={ringGeometry}>
+        <lineBasicMaterial ref={ringMaterial} color="#df8f77" transparent opacity={0.64} blending={THREE.NormalBlending} />
       </lineSegments>
       <pointLight position={[0, 0, 2]} intensity={1.4} color="#bcebd5" />
     </group>
