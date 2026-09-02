@@ -13,9 +13,9 @@ export function SiteFooter() {
         <div className="footer-links">
           <div>
             <strong>COMMUNITY</strong>
-            <Link href="/rooms">相談部屋</Link>
-            <Link href="/about">この場所について</Link>
-            <Link href="/safety">安心・安全</Link>
+            <Link href="/#rooms">相談部屋</Link>
+            <Link href="/#how-it-works">この場所でできること</Link>
+            <Link href="/#safety">安心・安全</Link>
             <Link href="/emergency">緊急の方へ</Link>
           </div>
           <div>

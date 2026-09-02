@@ -60,7 +60,7 @@ export default function Home() {
               <Link className="button button--mint" href="#rooms">
                 相談部屋を見つける <ArrowRight aria-hidden="true" />
               </Link>
-              <Link className="button button--ghost" href="/safety">
+              <Link className="button button--ghost" href="#safety">
                 安心して使うために
               </Link>
             </div>
@@ -127,16 +127,11 @@ export default function Home() {
             </div>
             <p>参加前に部屋の雰囲気を確認できます。投稿内容は参加メンバーだけに表示されます。</p>
           </div>
-          <CommunityExplorer compact />
-          <div className="section-action">
-            <Link className="text-link" href="/rooms">
-              すべての相談部屋を見る <ArrowRight aria-hidden="true" />
-            </Link>
-          </div>
+          <CommunityExplorer />
         </div>
       </section>
 
-      <section className="safety-panel" aria-labelledby="safety-title">
+      <section className="safety-panel" id="safety" aria-labelledby="safety-title">
         <div className="shell safety-panel__grid">
           <div className="safety-orbit" aria-hidden="true">
             <span className="safety-orbit__ring" />
@@ -153,8 +148,8 @@ export default function Home() {
               <span><ShieldCheck aria-hidden="true" /> 通報・確認</span>
               <span><HeartHandshake aria-hidden="true" /> 支援への案内</span>
             </div>
-            <Link className="button button--outline" href="/safety">
-              安全への取り組み <ArrowRight aria-hidden="true" />
+            <Link className="button button--outline" href="/emergency">
+              緊急時の相談先を確認 <ArrowRight aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -187,7 +182,7 @@ export default function Home() {
           <p>YOU DON&apos;T HAVE TO CARRY IT ALONE.</p>
           <h2 id="cta-title">ここなら、ひとりじゃない。</h2>
           <span>まずは、気になる部屋をのぞいてみませんか。</span>
-          <Link className="button button--coral" href="/rooms">
+          <Link className="button button--coral" href="#rooms">
             相談部屋を見つける <ArrowRight aria-hidden="true" />
           </Link>
         </div>

@@ -25,7 +25,7 @@ export default async function RoomPage({ params }: RoomPageProps) {
     <main id="main-content" className={`room-detail room-detail--${room.accent}`}>
       <section className="room-detail__hero">
         <div className="shell">
-          <Link className="back-link" href="/rooms"><ArrowLeft aria-hidden="true" /> 相談部屋一覧</Link>
+          <Link className="back-link" href="/#rooms"><ArrowLeft aria-hidden="true" /> 相談部屋一覧</Link>
           <div className="room-detail__title-row">
             <div>
               <p className="eyebrow"><span /> ANONYMOUS ROOM</p>
@@ -68,7 +68,7 @@ export default async function RoomPage({ params }: RoomPageProps) {
             <h2>安心して話せる部屋へ。</h2>
             <p>公開名はいつでも変更できます。参加した部屋や投稿内容が外部に公開されることはありません。</p>
             <JoinDialog roomTitle={room.title} />
-            <Link href="/safety">参加前に安全ルールを確認</Link>
+            <Link href="/#safety">参加前に安全ルールを確認</Link>
           </aside>
         </div>
       </section>

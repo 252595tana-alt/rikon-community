@@ -117,19 +117,19 @@ function Scene() {
           ref={material}
           vertexShader={vertexShader}
           fragmentShader={fragmentShader}
-          uniforms={{ uTime: { value: 0 }, uColor: { value: new THREE.Color("#a5f2ca") } }}
+          uniforms={{ uTime: { value: 0 }, uColor: { value: new THREE.Color("#62a98c") } }}
           transparent
           depthWrite={false}
-          blending={THREE.AdditiveBlending}
+          blending={THREE.NormalBlending}
         />
       </points>
       <lineSegments geometry={strandGeometry}>
-        <lineBasicMaterial color="#78d9b0" transparent opacity={0.22} blending={THREE.AdditiveBlending} />
+        <lineBasicMaterial color="#5f9f85" transparent opacity={0.28} blending={THREE.NormalBlending} />
       </lineSegments>
       <lineSegments geometry={ringGeometry}>
-        <lineBasicMaterial color="#ff866f" transparent opacity={0.72} blending={THREE.AdditiveBlending} />
+        <lineBasicMaterial color="#df8f77" transparent opacity={0.64} blending={THREE.NormalBlending} />
       </lineSegments>
-      <pointLight position={[0, 0, 2]} intensity={2.2} color="#90e9bf" />
+      <pointLight position={[0, 0, 2]} intensity={1.4} color="#bcebd5" />
     </group>
   );
 }

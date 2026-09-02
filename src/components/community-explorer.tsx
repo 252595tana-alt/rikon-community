@@ -34,7 +34,7 @@ const iconMap: Record<(typeof rooms)[number]["icon"], LucideIcon> = {
   heart: Heart,
 };
 
-export function CommunityExplorer({ compact = false }: { compact?: boolean }) {
+export function CommunityExplorer() {
   const [category, setCategory] = useState<(typeof filters)[number]["value"]>("all");
   const [query, setQuery] = useState("");
 
@@ -48,34 +48,32 @@ export function CommunityExplorer({ compact = false }: { compact?: boolean }) {
   }, [category, query]);
 
   return (
-    <div className={compact ? "community-explorer is-compact" : "community-explorer"}>
-      {!compact && (
-        <div className="explorer-tools">
-          <label className="search-field">
-            <Search aria-hidden="true" />
-            <span className="sr-only">相談部屋を検索</span>
-            <input
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="悩みやキーワードで検索"
-            />
-          </label>
-          <div className="filter-chips" aria-label="相談部屋のカテゴリー">
-            {filters.map((filter) => (
-              <button
-                key={filter.value}
-                className={category === filter.value ? "is-active" : undefined}
-                type="button"
-                onClick={() => setCategory(filter.value)}
-                aria-pressed={category === filter.value}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </div>
+    <div className="community-explorer">
+      <div className="explorer-tools">
+        <label className="search-field">
+          <Search aria-hidden="true" />
+          <span className="sr-only">相談部屋を検索</span>
+          <input
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="悩みやキーワードで検索"
+          />
+        </label>
+        <div className="filter-chips" aria-label="相談部屋のカテゴリー">
+          {filters.map((filter) => (
+            <button
+              key={filter.value}
+              className={category === filter.value ? "is-active" : undefined}
+              type="button"
+              onClick={() => setCategory(filter.value)}
+              aria-pressed={category === filter.value}
+            >
+              {filter.label}
+            </button>
+          ))}
         </div>
-      )}
+      </div>
 
       <p className="results-count" aria-live="polite">{visibleRooms.length}件の相談部屋</p>
       <div className="room-grid">
