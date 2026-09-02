@@ -33,9 +33,6 @@ export default function Home() {
               <Link className="button button--mint" href="#rooms">
                 相談部屋を見つける <ArrowRight aria-hidden="true" />
               </Link>
-              <Link className="button button--ghost" href="#safety">
-                安全のしくみを見る
-              </Link>
             </div>
             <ul className="trust-list" aria-label="サービスの特徴">
               <li><LockKeyhole aria-hidden="true" /> 匿名で参加</li>
@@ -70,30 +67,6 @@ export default function Home() {
             <p>参加前に部屋の雰囲気を確認できます。投稿内容は参加メンバーだけに表示されます。</p>
           </div>
           <CommunityExplorer />
-        </div>
-      </section>
-
-      <section className="safety-panel" id="safety" aria-labelledby="safety-title">
-        <div className="shell safety-panel__grid">
-          <div className="safety-orbit" aria-hidden="true">
-            <span className="safety-orbit__ring" />
-            <ShieldCheck />
-          </div>
-          <div className="safety-copy">
-            <p className="eyebrow eyebrow--light"><span /> 安心のための設計</p>
-            <h2 id="safety-title">あなたの安全を、<br />会話より先に。</h2>
-            <p>
-              本名や連絡先を公開せずに参加できます。不快な投稿の通報、個人情報を含む表現への注意、運営による確認で、安心できる場を守ります。
-            </p>
-            <div className="safety-features">
-              <span><LockKeyhole aria-hidden="true" /> 完全匿名</span>
-              <span><ShieldCheck aria-hidden="true" /> 通報・確認</span>
-              <span><HeartHandshake aria-hidden="true" /> 支援への案内</span>
-            </div>
-            <Link className="button button--outline" href="/emergency">
-              緊急時の相談先を確認 <ArrowRight aria-hidden="true" />
-            </Link>
-          </div>
         </div>
       </section>
 

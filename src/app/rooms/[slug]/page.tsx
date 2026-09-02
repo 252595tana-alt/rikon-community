@@ -68,7 +68,6 @@ export default async function RoomPage({ params }: RoomPageProps) {
             <h2>安心して話せる部屋へ。</h2>
             <p>公開名はいつでも変更できます。参加した部屋や投稿内容が外部に公開されることはありません。</p>
             <JoinDialog roomTitle={room.title} />
-            <Link href="/#safety">参加前に安全ルールを確認</Link>
           </aside>
         </div>
       </section>

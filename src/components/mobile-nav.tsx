@@ -3,12 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { House, LayoutGrid, ShieldCheck, UserRound } from "lucide-react";
+import { House, LayoutGrid, UserRound } from "lucide-react";
 
 const items = [
   { href: "/", label: "ホーム", icon: House },
   { href: "/#rooms", label: "相談部屋", icon: LayoutGrid },
-  { href: "/#safety", label: "安心・安全", icon: ShieldCheck },
   { href: "/login", label: "ログイン", icon: UserRound },
 ];
 
@@ -22,10 +21,8 @@ export function MobileNav() {
     const updateActiveSection = () => {
       const marker = window.scrollY + Math.min(window.innerHeight * 0.35, 240);
       const roomsTop = document.querySelector<HTMLElement>("#rooms")?.offsetTop ?? Number.POSITIVE_INFINITY;
-      const safetyTop = document.querySelector<HTMLElement>("#safety")?.offsetTop ?? Number.POSITIVE_INFINITY;
 
-      if (marker >= safetyTop) setActiveSection("/#safety");
-      else if (marker >= roomsTop) setActiveSection("/#rooms");
+      if (marker >= roomsTop) setActiveSection("/#rooms");
       else setActiveSection("/");
     };
 

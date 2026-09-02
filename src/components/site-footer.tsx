@@ -14,7 +14,6 @@ export function SiteFooter() {
           <div>
             <strong>COMMUNITY</strong>
             <Link href="/#rooms">相談部屋</Link>
-            <Link href="/#safety">安心・安全</Link>
             <Link href="/emergency">緊急の方へ</Link>
           </div>
           <div>
