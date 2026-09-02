@@ -9,12 +9,14 @@ export function JoinDialog({ roomTitle }: { roomTitle: string }) {
 
   return (
     <>
-      <button className="button button--coral room-join-button" type="button" onClick={() => dialogRef.current?.showModal()}>
+      <button className="button button--mint room-join-button" type="button" onClick={() => dialogRef.current?.showModal()}>
         この部屋に参加する <ArrowRight aria-hidden="true" />
       </button>
       <dialog
         className="join-dialog"
         ref={dialogRef}
+        aria-labelledby="join-dialog-title"
+        aria-describedby="join-dialog-description"
         onClick={(event) => {
           if (event.target === dialogRef.current) dialogRef.current.close();
         }}
@@ -23,8 +25,8 @@ export function JoinDialog({ roomTitle }: { roomTitle: string }) {
           <form method="dialog"><button className="dialog-close" aria-label="閉じる"><X aria-hidden="true" /></button></form>
           <span className="join-dialog__icon"><LockKeyhole aria-hidden="true" /></span>
           <p className="eyebrow"><span /> MEMBER ONLY</p>
-          <h2>{roomTitle}に参加</h2>
-          <p>安心できる場を守るため、参加には匿名アカウントと利用ルールへの同意が必要です。</p>
+          <h2 id="join-dialog-title">{roomTitle}に参加</h2>
+          <p id="join-dialog-description">安心できる場を守るため、参加には匿名アカウントと利用ルールへの同意が必要です。</p>
           <ul>
             <li><Check aria-hidden="true" /> 公開名に本名を使わない</li>
             <li><Check aria-hidden="true" /> 個人の連絡先を書かない</li>

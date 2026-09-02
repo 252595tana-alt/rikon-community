@@ -61,7 +61,7 @@ export default function Home() {
                 相談部屋を見つける <ArrowRight aria-hidden="true" />
               </Link>
               <Link className="button button--ghost" href="#safety">
-                安心して使うために
+                安全のしくみを見る
               </Link>
             </div>
             <ul className="trust-list" aria-label="サービスの特徴">
@@ -182,7 +182,7 @@ export default function Home() {
           <p>YOU DON&apos;T HAVE TO CARRY IT ALONE.</p>
           <h2 id="cta-title">ここなら、ひとりじゃない。</h2>
           <span>まずは、気になる部屋をのぞいてみませんか。</span>
-          <Link className="button button--coral" href="#rooms">
+          <Link className="button button--mint" href="#rooms">
             相談部屋を見つける <ArrowRight aria-hidden="true" />
           </Link>
         </div>

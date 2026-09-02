@@ -80,7 +80,12 @@ export function CommunityExplorer() {
         {visibleRooms.map((room) => {
           const Icon = iconMap[room.icon];
           return (
-            <article className={`room-card room-card--${room.accent}`} key={room.slug}>
+            <Link
+              className={`room-card room-card--${room.accent}`}
+              href={`/rooms/${room.slug}`}
+              aria-label={`${room.title}を見る`}
+              key={room.slug}
+            >
               <div className="room-card__header">
                 <span className="room-icon"><Icon aria-hidden="true" /></span>
                 {room.badge && <span className="room-badge">{room.badge}</span>}
@@ -98,10 +103,10 @@ export function CommunityExplorer() {
                 <span><UsersRound aria-hidden="true" /> {room.members.toLocaleString("ja-JP")}人</span>
                 <span><MessageCircle aria-hidden="true" /> 今日 {room.postsToday}</span>
               </div>
-              <Link className="room-card__link" href={`/rooms/${room.slug}`} aria-label={`${room.title}を見る`}>
+              <span className="room-card__link">
                 部屋を見る <ArrowRight aria-hidden="true" />
-              </Link>
-            </article>
+              </span>
+            </Link>
           );
         })}
       </div>
