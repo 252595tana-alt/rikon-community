@@ -2,40 +2,13 @@ import Link from "next/link";
 import {
   ArrowDown,
   ArrowRight,
-  BookOpenText,
   HeartHandshake,
   LockKeyhole,
-  MessageCircleHeart,
-  Route,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import { CommunityExplorer } from "@/components/community-explorer";
 import { HeroCanvas } from "@/components/webgl/hero-canvas";
-
-const steps = [
-  {
-    number: "01",
-    title: "話す",
-    en: "SHARE",
-    text: "名前も顔も出さずに、いまの気持ちを言葉にする。読むだけでも大丈夫です。",
-    icon: MessageCircleHeart,
-  },
-  {
-    number: "02",
-    title: "知る",
-    en: "LEARN",
-    text: "同じ悩みを通った人の経験や、運営が確認した支援情報から選択肢を知る。",
-    icon: BookOpenText,
-  },
-  {
-    number: "03",
-    title: "つながる",
-    en: "CONNECT",
-    text: "必要なときは、地域の制度や専門家など、自分に合う支援へつながる。",
-    icon: Route,
-  },
-];
 
 export default function Home() {
   return (
@@ -82,40 +55,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <a className="scroll-cue" href="#how-it-works">
+        <a className="scroll-cue" href="#rooms">
           <span>SCROLL</span><ArrowDown aria-hidden="true" />
         </a>
-      </section>
-
-      <section className="pathway" id="how-it-works" aria-labelledby="pathway-title">
-        <div className="shell">
-          <div className="section-heading section-heading--split">
-            <div>
-              <p className="eyebrow"><span /> この場所でできること</p>
-              <h2 id="pathway-title">気持ちを、<br />次の行動へ。</h2>
-            </div>
-            <p>
-              答えを急がなくて大丈夫。話す、知る、つながる。
-              <br />いま必要なところから始められます。
-            </p>
-          </div>
-          <div className="step-grid">
-            {steps.map((step) => {
-              const Icon = step.icon;
-              return (
-                <article className="step-card" key={step.number}>
-                  <div className="step-card__top">
-                    <span className="step-card__number">{step.number}</span>
-                    <Icon aria-hidden="true" />
-                  </div>
-                  <p className="step-card__en">{step.en}</p>
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
-                </article>
-              );
-            })}
-          </div>
-        </div>
       </section>
 
       <section className="rooms-section" id="rooms" aria-labelledby="rooms-title">

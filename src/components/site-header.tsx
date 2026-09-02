@@ -22,7 +22,6 @@ export function SiteHeader() {
         </Link>
         <nav className="desktop-nav" aria-label="メインナビゲーション">
           <Link href="/#rooms">相談部屋</Link>
-          <Link href="/#how-it-works">この場所でできること</Link>
           <Link href="/#safety">安心・安全</Link>
           <a href="https://252595tana-alt.github.io/rikon-support-navi-prototype/" target="_blank" rel="noreferrer">支援ナビ <ArrowUpRight aria-hidden="true" /></a>
         </nav>

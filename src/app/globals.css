@@ -112,21 +112,10 @@ svg { flex: 0 0 auto; }
 .scroll-cue { position: absolute; z-index: 4; left: 50%; bottom: 18px; min-width: 44px; min-height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: var(--ink-soft); font-size: 8px; font-weight: 800; letter-spacing: .25em; transform: translateX(-50%); }
 .scroll-cue svg { width: 13px; }
 
-.pathway { padding: 128px 0 116px; background: var(--paper); }
 .section-heading--split { display: grid; grid-template-columns: 1fr; justify-items: center; gap: 24px; text-align: center; }
 .section-heading h2 { margin: 0; font-size: clamp(38px, 5.2vw, 68px); font-weight: 550; line-height: 1.28; letter-spacing: -.055em; }
 .section-heading--split > p { margin: 0; max-width: 560px; color: var(--ink-soft); font-size: 14px; line-height: 2; }
 .section-heading .eyebrow, .hero-copy .eyebrow, .safety-copy .eyebrow, .support-bridge .eyebrow, .page-hero .eyebrow { justify-content: center; }
-.step-grid { margin-top: 68px; display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-.step-card { min-height: 360px; padding: 35px 32px; display: flex; flex-direction: column; align-items: center; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.72); box-shadow: 0 14px 38px rgba(66,104,89,.05); text-align: center; transition: background .25s; }
-.step-card:first-child { border-left: 1px solid var(--line); }
-.step-card:hover { background: var(--white); }
-.step-card__top { width: 100%; display: flex; align-items: center; justify-content: center; gap: 16px; }
-.step-card__top svg { width: 25px; color: var(--coral); }
-.step-card__number { font-size: 11px; font-weight: 800; letter-spacing: .14em; }
-.step-card__en { margin: auto 0 5px !important; color: var(--mint-deep) !important; font-size: 9px !important; font-weight: 900; letter-spacing: .27em; }
-.step-card h3 { margin: 0 0 20px; font-size: 33px; font-weight: 600; letter-spacing: -.05em; }
-.step-card > p:last-child { margin: 0; color: #5d6b65; font-size: 13px; line-height: 1.9; }
 
 .rooms-section, .rooms-index { padding: 120px 0; background: #edf8f3; }
 .rooms-index { padding-top: 84px; }
@@ -412,12 +401,8 @@ svg { flex: 0 0 auto; }
   .trust-list li + li { padding-left: 10px; }
   .orbit-label--one { left: 22%; }.orbit-label--two { right: 21%; }.orbit-label--three { right: 18%; }
   .scroll-cue { display: none; }
-  .pathway, .rooms-section, .support-bridge { padding: 82px 0; }
+  .rooms-section, .support-bridge { padding: 82px 0; }
   .section-heading--split { grid-template-columns: 1fr; gap: 25px; }
-  .step-grid { margin-top: 45px; grid-template-columns: 1fr; }
-  .step-card { min-height: 260px; border-left: 1px solid var(--line); }
-  .step-card + .step-card { border-top-color: var(--line); }
-  .step-card__en { margin-top: auto !important; }
   .explorer-tools { grid-template-columns: 1fr; gap: 15px; }
   .filter-chips { justify-content: flex-start; margin-inline: -16px; padding-inline: 16px; }
   .room-grid { grid-template-columns: 1fr; }
