@@ -91,17 +91,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="final-cta" aria-labelledby="cta-title">
-        <div className="final-cta__glow" aria-hidden="true" />
-        <div className="shell final-cta__inner">
-          <p>YOU DON&apos;T HAVE TO CARRY IT ALONE.</p>
-          <h2 id="cta-title">ここなら、ひとりじゃない。</h2>
-          <span>まずは、気になる部屋をのぞいてみませんか。</span>
-          <Link className="button button--mint" href="#rooms">
-            相談部屋を見つける <ArrowRight aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }

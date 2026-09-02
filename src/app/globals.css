@@ -184,13 +184,6 @@ svg { flex: 0 0 auto; }
 .support-card--window small { color: #7b675f; }
 .support-card strong { font-size: 18px; }
 .support-card > svg { width: 21px; }
-.final-cta { position: relative; padding: 120px 0; overflow: hidden; background: linear-gradient(135deg, #fff0e6 0%, #eef9f3 100%); color: var(--ink); text-align: center; }
-.final-cta__glow { position: absolute; left: 50%; top: 50%; width: 600px; aspect-ratio: 1; border: 1px solid rgba(47,128,99,.16); border-radius: 50%; transform: translate(-50%,-50%) scaleY(.42); box-shadow: 0 0 140px rgba(243,160,135,.12); }
-.final-cta__inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
-.final-cta p { margin: 0 0 17px; color: var(--mint-deep); font-size: 9px; font-weight: 900; letter-spacing: .3em; }
-.final-cta h2 { margin: 0; font-size: clamp(43px,6vw,74px); font-weight: 550; letter-spacing: -.07em; }
-.final-cta span { margin: 15px 0 32px; color: var(--ink-soft); font-size: 13px; }
-
 .site-footer { padding: 72px 0 25px; background: #edf7f1; color: var(--ink-soft); border-top: 1px solid var(--line); }
 .site-footer__top { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; }
 .footer-brand .brand-copy strong { color: var(--ink); }
@@ -442,8 +435,6 @@ svg { flex: 0 0 auto; }
   .support-card { padding: 18px; gap: 13px; }
   .support-card__icon { width: 47px; }
   .support-card strong { font-size: 15px; }
-  .final-cta { padding: 90px 0; }
-  .final-cta h2 { font-size: 43px; }
   .footer-links { grid-template-columns: repeat(2,1fr); row-gap: 40px; }
   .footer-links a { min-height: 44px; }
   .site-footer__bottom { flex-direction: column; }
