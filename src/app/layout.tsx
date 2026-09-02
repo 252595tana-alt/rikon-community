@@ -46,7 +46,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ja" className={notoSansJp.variable}>
+    <html lang="ja" className={notoSansJp.variable} data-scroll-behavior="smooth">
       <body>
         <a className="skip-link" href="#main-content">
           本文へ移動
