@@ -74,6 +74,8 @@ svg { flex: 0 0 auto; }
 .button--outline { color: var(--mint-deep); border: 1px solid rgba(47,128,99,.34); background: var(--white); }
 .button--coral { background: var(--coral); color: var(--ink); }
 .button--dark { background: var(--mint-deep); color: var(--white); }
+.button--emergency { min-height: 48px; border: 1px solid rgba(173,70,54,.32); background: rgba(255,240,234,.92); color: #a64234; box-shadow: 0 10px 24px rgba(173,70,54,.09); }
+.button--emergency:hover { border-color: rgba(173,70,54,.52); background: #ffe3d9; color: #8e3429; box-shadow: 0 14px 30px rgba(173,70,54,.15); }
 .text-link { display: inline-flex; align-items: center; gap: 12px; padding-bottom: 7px; border-bottom: 1px solid currentColor; font-size: 14px; font-weight: 800; }
 .text-link svg { width: 18px; transition: transform .2s; }
 .text-link:hover svg { transform: translateX(4px); }
@@ -95,7 +97,8 @@ svg { flex: 0 0 auto; }
 .hero h1 em { position: relative; z-index: 1; color: var(--mint-deep); font-style: normal; }
 .hero h1 em::after { content: ""; position: absolute; z-index: -1; inset: auto -5px 3px -3px; height: 13px; background: rgba(243,160,135,.48); transform: rotate(-1.5deg); }
 .hero-lead { margin: 28px 0 0; max-width: 650px; color: var(--ink-soft); font-size: 15px; line-height: 2; }
-.hero-actions { margin-top: 38px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.hero-actions { margin-top: 38px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+.hero-actions .button { min-width: 220px; }
 .trust-list { margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; list-style: none; color: var(--ink-soft); font-size: 10px; font-weight: 600; letter-spacing: .06em; }
 .trust-list li { display: flex; align-items: center; gap: 5px; }
 .trust-list li + li { padding-left: 18px; border-left: 1px solid var(--line); }
@@ -385,8 +388,8 @@ svg { flex: 0 0 auto; }
   .hero-lead { font-size: 13px; }
   .hero-art { inset: 0 -45%; height: 100%; margin: 0; opacity: .46; transform: translateY(-27%); }
   .hero-copy { width: 100%; padding-top: 106px; text-align: center; }
-  .hero-actions { gap: 9px; }
-  .hero-actions .button { flex: 0 1 260px; }
+  .hero-actions { width: 100%; gap: 9px; }
+  .hero-actions .button { width: min(260px, 100%); min-width: 0; flex: 0 0 auto; }
   .trust-list { justify-content: center; gap: 10px; }
   .trust-list li + li { padding-left: 10px; }
   .orbit-label--one { left: 22%; }.orbit-label--two { right: 21%; }.orbit-label--three { right: 18%; }

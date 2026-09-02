@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   ArrowDown,
   ArrowRight,
+  CircleHelp,
   HeartHandshake,
   LockKeyhole,
   ShieldCheck,
@@ -36,6 +37,9 @@ export default function Home() {
             <div className="hero-actions">
               <Link className="button button--mint" href="#rooms">
                 相談部屋を見つける <ArrowRight aria-hidden="true" />
+              </Link>
+              <Link className="button button--emergency" href="/emergency">
+                <CircleHelp aria-hidden="true" /> 緊急の方はこちら
               </Link>
             </div>
             <ul className="trust-list" aria-label="サービスの特徴">
