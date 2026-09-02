@@ -13,7 +13,7 @@ export function SiteFooter() {
         <div className="footer-links">
           <div>
             <strong>COMMUNITY</strong>
-            <Link href="/#rooms">相談部屋</Link>
+            <a href="https://rikon-window.vercel.app/diagnosis/start" target="_blank" rel="noreferrer">離婚診断 <ArrowUpRight /></a>
             <Link href="/emergency">緊急の方へ</Link>
           </div>
           <div>

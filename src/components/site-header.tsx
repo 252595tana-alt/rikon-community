@@ -21,7 +21,9 @@ export function SiteHeader() {
           <Brand />
         </Link>
         <nav className="desktop-nav" aria-label="メインナビゲーション">
-          <Link href="/#rooms">相談部屋</Link>
+          <a className="diagnosis-nav-cta" href="https://rikon-window.vercel.app/diagnosis/start" target="_blank" rel="noreferrer">
+            離婚診断 <ArrowUpRight aria-hidden="true" />
+          </a>
           <a href="https://252595tana-alt.github.io/rikon-support-navi-prototype/" target="_blank" rel="noreferrer">支援ナビ <ArrowUpRight aria-hidden="true" /></a>
         </nav>
         <div className="header-actions">
