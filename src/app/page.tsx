@@ -84,7 +84,7 @@ export default function Home() {
             </a>
             <a className="support-card support-card--window" href="https://rikon-window.vercel.app/diagnosis/start" target="_blank" rel="noreferrer">
               <span className="support-card__icon"><HeartHandshake aria-hidden="true" /></span>
-              <span><small>必要な準備と優先順位を整理する</small><strong>3分で離婚準備を無料診断</strong></span>
+              <span><small>離婚診断</small><strong>3分で離婚準備を無料診断</strong></span>
               <ArrowRight aria-hidden="true" />
             </a>
           </div>
