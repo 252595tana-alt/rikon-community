@@ -79,12 +79,12 @@ export default function Home() {
           <div className="support-cards">
             <a className="support-card support-card--nav" href="https://252595tana-alt.github.io/rikon-support-navi-prototype/" target="_blank" rel="noreferrer">
               <span className="support-card__icon"><Sparkles aria-hidden="true" /></span>
-              <span><small>状況を整理したい</small><strong>支援ナビを使う</strong></span>
+              <span><small>状況に合う制度・相談先を探す</small><strong>徳島市の支援を無料で検索</strong></span>
               <ArrowRight aria-hidden="true" />
             </a>
-            <a className="support-card support-card--window" href="https://rikon-window.vercel.app" target="_blank" rel="noreferrer">
+            <a className="support-card support-card--window" href="https://rikon-window.vercel.app/diagnosis/start" target="_blank" rel="noreferrer">
               <span className="support-card__icon"><HeartHandshake aria-hidden="true" /></span>
-              <span><small>サービス全体を知りたい</small><strong>りこんの窓口へ</strong></span>
+              <span><small>必要な準備と優先順位を整理する</small><strong>3分で離婚準備を無料診断</strong></span>
               <ArrowRight aria-hidden="true" />
             </a>
           </div>
