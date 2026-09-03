@@ -91,7 +91,7 @@ svg { flex: 0 0 auto; }
 .hero::after { content: ""; position: absolute; inset: auto -10% -52% 28%; height: 70%; border: 1px solid rgba(47,128,99,.11); border-radius: 50%; transform: rotate(-8deg); }
 .hero-noise { position: absolute; inset: 0; opacity: .035; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E"); }
 .hero-inner { position: relative; z-index: 2; min-height: calc(100svh - 76px); padding-block: 82px 98px; display: flex; align-items: center; justify-content: center; text-align: center; }
-.hero-copy { position: relative; z-index: 5; width: min(900px, 100%); padding-top: 118px; display: flex; flex-direction: column; align-items: center; }
+.hero-copy { position: relative; z-index: 5; width: min(900px, 100%); display: flex; flex-direction: column; align-items: center; transform: translateY(-56px); }
 .hero h1 { margin: 0; max-width: 690px; font-size: clamp(44px, 5.4vw, 78px); font-weight: 530; line-height: 1.24; letter-spacing: -.06em; }
 .hero-title-line { display: block; white-space: nowrap; }
 .hero h1 em { position: relative; z-index: 1; color: var(--mint-deep); font-style: normal; }
@@ -396,7 +396,7 @@ svg { flex: 0 0 auto; }
   .hero h1 { font-size: clamp(41px,11.4vw,62px); }
   .hero-lead { font-size: 15px; }
   .hero-art { inset: 0 -45%; height: 100%; margin: 0; opacity: .46; transform: translateY(-27%); }
-  .hero-copy { width: 100%; padding-top: 106px; text-align: center; }
+  .hero-copy { width: 100%; text-align: center; transform: translateY(-36px); }
   .hero-actions { width: 100%; gap: 9px; }
   .hero-actions .button { width: min(260px, 100%); min-width: 0; flex: 0 0 auto; }
   .trust-list { justify-content: center; gap: 10px; }
@@ -448,7 +448,7 @@ svg { flex: 0 0 auto; }
   .home-page__webgl { left: -65%; right: -65%; transform: translateY(-28%); }
   .hero-inner { padding: 72px 0 64px; }
   .hero-art { inset: 0 -65%; height: 100%; margin: 0; transform: translateY(-28%); }
-  .hero-copy { padding-top: 104px; }
+  .hero-copy { transform: translateY(-22px); }
   .hero h1 { font-size: 42px; line-height: 1.3; }
   .hero-title-line { font-size: 38px; }
   .hero-lead { margin-top: 20px; line-height: 1.9; }
