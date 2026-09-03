@@ -118,7 +118,6 @@ svg { flex: 0 0 auto; }
 .orbit-label span { width: 5px; height: 5px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 12px var(--coral); }
 .orbit-label--one { left: 7%; top: 28%; }
 .orbit-label--two { right: 14%; top: 24%; }
-.orbit-label--three { right: 8%; bottom: 22%; }
 .scroll-cue { position: absolute; z-index: 4; left: 50%; bottom: 18px; min-width: 44px; min-height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: var(--ink-soft); font-size: 8px; font-weight: 800; letter-spacing: .25em; transform: translateX(-50%); }
 .scroll-cue svg { width: 13px; }
 
@@ -405,7 +404,7 @@ svg { flex: 0 0 auto; }
   .hero-actions .button { width: min(260px, 100%); min-width: 0; flex: 0 0 auto; }
   .trust-list { justify-content: center; gap: 10px; }
   .trust-list li + li { padding-left: 10px; }
-  .orbit-label--one { left: 22%; }.orbit-label--two { right: 21%; }.orbit-label--three { right: 18%; }
+  .orbit-label--one { left: 22%; }.orbit-label--two { right: 21%; }
   .scroll-cue { display: none; }
   .rooms-section, .support-bridge { padding: 82px 0; }
   .section-heading--split { grid-template-columns: 1fr; gap: 25px; }
