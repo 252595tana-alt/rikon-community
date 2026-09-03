@@ -52,10 +52,6 @@ export default function Home() {
           <div className="hero-art" aria-label="それぞれの悩みが安心できる場所へつながっていく様子">
             <div className="orbit-label orbit-label--one"><span />お金・生活</div>
             <div className="orbit-label orbit-label--two"><span />子育て</div>
-            <div className="hero-core">
-              <span className="hero-core__small">YOU ARE</span>
-              <strong>NOT<br />ALONE</strong>
-            </div>
           </div>
         </div>
         <a className="scroll-cue" href="#rooms">
