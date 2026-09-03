@@ -30,7 +30,6 @@ const filters = [
 
 const regionFilters = [
   { value: "all", label: "すべての地域" },
-  { value: "national", label: "全国" },
   { value: "tokushima-prefecture", label: "徳島県" },
   { value: "tokushima-city", label: "徳島市" },
 ] as const;
