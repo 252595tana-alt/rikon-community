@@ -62,7 +62,8 @@ export function CommunityExplorer() {
 
   const activeCategoryLabel = category === "all" ? "" : filters.find((filter) => filter.value === category)?.label ?? "";
   const activeRegionLabel = region === "all" ? "" : regionFilters.find((filter) => filter.value === region)?.label ?? "";
-  const resultScope = [activeRegionLabel, activeCategoryLabel].filter(Boolean).join("・");
+  const activeQueryLabel = query.trim() ? `「${query.trim()}」` : "";
+  const resultScope = [activeQueryLabel, activeRegionLabel, activeCategoryLabel].filter(Boolean).join("・");
 
   return (
     <div className="community-explorer">
@@ -75,6 +76,8 @@ export function CommunityExplorer() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="悩みやキーワードで検索"
+            aria-controls="room-results"
+            aria-describedby="room-results-summary"
           />
         </label>
         <div className="filter-chips" role="group" aria-label="相談部屋のカテゴリー">
@@ -85,6 +88,7 @@ export function CommunityExplorer() {
               type="button"
               onClick={() => setCategory(filter.value)}
               aria-pressed={category === filter.value}
+              aria-controls="room-results"
             >
               {filter.label}
             </button>
@@ -92,7 +96,7 @@ export function CommunityExplorer() {
         </div>
       </div>
 
-      <div className="region-filter" role="group" aria-label="相談部屋の地域">
+      <div className="region-filter" role="group" aria-label="相談部屋の地域" aria-describedby="region-filter-note">
         <span className="region-filter__label"><MapPin aria-hidden="true" /> 地域から探す</span>
         <div className="region-chips">
           {regionFilters.map((filter) => (
@@ -102,6 +106,7 @@ export function CommunityExplorer() {
               type="button"
               onClick={() => setRegion(filter.value)}
               aria-pressed={region === filter.value}
+              aria-controls="room-results"
             >
               {filter.label}
             </button>
@@ -109,15 +114,15 @@ export function CommunityExplorer() {
         </div>
       </div>
 
-      <p className="region-filter-note">
+      <p className="region-filter-note" id="region-filter-note">
         <ShieldCheck aria-hidden="true" />
         現在は徳島県・徳島市を先行公開しています。選んだ地域が投稿に表示されることはありません。
       </p>
 
-      <p className="results-count" aria-live="polite">
+      <p className="results-count" id="room-results-summary" aria-live="polite">
         {resultScope && <>{resultScope}：</>}{visibleRooms.length}件の相談部屋
       </p>
-      <div className="room-grid">
+      <div className="room-grid" id="room-results" role="region" aria-labelledby="room-results-summary">
         {visibleRooms.map((room) => {
           const Icon = iconMap[room.icon];
           return (
