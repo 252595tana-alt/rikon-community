@@ -9,6 +9,8 @@ import {
   CircleUserRound,
   Compass,
   Heart,
+  Map,
+  MapPin,
   MessageCircle,
   Search,
   UsersRound,
@@ -25,6 +27,13 @@ const filters = [
   { value: "listen", label: "気持ち" },
 ] as const;
 
+const regionFilters = [
+  { value: "all", label: "すべての地域" },
+  { value: "national", label: "全国" },
+  { value: "tokushima-prefecture", label: "徳島県" },
+  { value: "tokushima-city", label: "徳島市" },
+] as const;
+
 const iconMap: Record<(typeof rooms)[number]["icon"], LucideIcon> = {
   wallet: WalletCards,
   briefcase: BriefcaseBusiness,
@@ -32,20 +41,24 @@ const iconMap: Record<(typeof rooms)[number]["icon"], LucideIcon> = {
   father: CircleUserRound,
   compass: Compass,
   heart: Heart,
+  map: Map,
+  pin: MapPin,
 };
 
 export function CommunityExplorer() {
   const [category, setCategory] = useState<(typeof filters)[number]["value"]>("all");
+  const [region, setRegion] = useState<(typeof regionFilters)[number]["value"]>("all");
   const [query, setQuery] = useState("");
 
   const visibleRooms = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase("ja-JP");
     return rooms.filter((room) => {
-      const matchesCategory = category === "all" || room.category === category;
-      const searchable = [room.title, room.description, ...room.tags].join(" ").toLocaleLowerCase("ja-JP");
-      return matchesCategory && (!normalized || searchable.includes(normalized));
+      const matchesCategory = category === "all" || room.categories.includes(category);
+      const matchesRegion = region === "all" || room.region === region;
+      const searchable = [room.title, room.description, room.regionLabel, ...room.tags].join(" ").toLocaleLowerCase("ja-JP");
+      return matchesCategory && matchesRegion && (!normalized || searchable.includes(normalized));
     });
-  }, [category, query]);
+  }, [category, query, region]);
 
   return (
     <div className="community-explorer">
@@ -60,7 +73,7 @@ export function CommunityExplorer() {
             placeholder="悩みやキーワードで検索"
           />
         </label>
-        <div className="filter-chips" aria-label="相談部屋のカテゴリー">
+        <div className="filter-chips" role="group" aria-label="相談部屋のカテゴリー">
           {filters.map((filter) => (
             <button
               key={filter.value}
@@ -68,6 +81,23 @@ export function CommunityExplorer() {
               type="button"
               onClick={() => setCategory(filter.value)}
               aria-pressed={category === filter.value}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="region-filter" role="group" aria-label="相談部屋の地域">
+        <span className="region-filter__label"><MapPin aria-hidden="true" /> 地域から探す</span>
+        <div className="region-chips">
+          {regionFilters.map((filter) => (
+            <button
+              key={filter.value}
+              className={region === filter.value ? "is-active" : undefined}
+              type="button"
+              onClick={() => setRegion(filter.value)}
+              aria-pressed={region === filter.value}
             >
               {filter.label}
             </button>
@@ -91,7 +121,7 @@ export function CommunityExplorer() {
                 {room.badge && <span className="room-badge">{room.badge}</span>}
               </div>
               <div className="room-card__body">
-                <p className="room-label">ANONYMOUS ROOM</p>
+                <p className="room-label">{room.region === "national" ? "ANONYMOUS ROOM" : "LOCAL COMMUNITY"}</p>
                 <h3>{room.title}</h3>
                 <p>{room.description}</p>
                 <div className="room-tags">
@@ -114,8 +144,8 @@ export function CommunityExplorer() {
         <div className="empty-state">
           <Search aria-hidden="true" />
           <h3>一致する部屋がありません</h3>
-          <p>別のキーワード、または「すべて」をお試しください。</p>
-          <button type="button" onClick={() => { setCategory("all"); setQuery(""); }}>検索をリセット</button>
+          <p>別のキーワード、またはカテゴリー・地域の「すべて」をお試しください。</p>
+          <button type="button" onClick={() => { setCategory("all"); setRegion("all"); setQuery(""); }}>検索をリセット</button>
         </div>
       )}
     </div>

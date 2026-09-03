@@ -68,10 +68,10 @@ export default function Home() {
         <div className="shell">
           <div className="section-heading section-heading--split section-heading--rooms">
             <div>
-              <p className="eyebrow"><span /> 6つの匿名相談部屋</p>
-              <h2 id="rooms-title">いまの悩みに近い部屋から。</h2>
+              <p className="eyebrow"><span /> テーマと地域でつながる相談部屋</p>
+              <h2 id="rooms-title">いまの悩みや地域に近い部屋から。</h2>
             </div>
-            <p>参加前に部屋の雰囲気を確認できます。投稿内容は参加メンバーだけに表示されます。</p>
+            <p>全国共通のテーマに加え、身近な制度や暮らしを話せる地域の部屋を探せます。投稿内容は参加メンバーだけに表示されます。</p>
           </div>
           <CommunityExplorer />
         </div>

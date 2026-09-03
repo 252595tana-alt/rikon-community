@@ -142,6 +142,14 @@ svg { flex: 0 0 auto; }
 .filter-chips::-webkit-scrollbar-thumb { border-radius: 999px; background: rgba(47,128,99,.35); }
 .filter-chips button { flex: 0 0 auto; min-height: 44px; padding: 0 17px; border: 1px solid rgba(10,23,19,.13); border-radius: 999px; background: rgba(255,255,255,.45); color: var(--ink-soft); font-size: 12px; font-weight: 700; cursor: pointer; }
 .filter-chips button.is-active { background: var(--mint-deep); color: var(--white); border-color: var(--mint-deep); }
+.region-filter { width: min(760px, 100%); margin: -10px auto 28px; padding: 9px 11px; display: flex; align-items: center; justify-content: center; gap: 13px; border: 1px solid rgba(47,128,99,.14); border-radius: 999px; background: rgba(255,255,255,.64); box-shadow: 0 8px 24px rgba(47,128,99,.05); }
+.region-filter__label { flex: 0 0 auto; padding-left: 5px; display: inline-flex; align-items: center; gap: 6px; color: #49675b; font-size: 11px; font-weight: 800; }
+.region-filter__label svg { width: 15px; color: var(--mint-deep); }
+.region-chips { display: flex; align-items: center; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.region-chips::-webkit-scrollbar { display: none; }
+.region-chips button { flex: 0 0 auto; min-height: 36px; padding: 0 14px; border: 1px solid transparent; border-radius: 999px; background: transparent; color: #60736a; font-size: 11px; font-weight: 750; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.region-chips button:hover { background: var(--mint-pale); color: var(--mint-deep); }
+.region-chips button.is-active { border-color: rgba(47,128,99,.22); background: var(--mint-pale); color: var(--mint-deep); }
 .results-count { margin: 0 0 13px; color: #667a71; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-align: center; }
 .room-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .room-card { --room-accent: #84c9aa; position: relative; min-height: 430px; padding: 25px; display: flex; flex-direction: column; overflow: hidden; background: rgba(255,255,255,.84); border: 1px solid rgba(10,23,19,.09); border-radius: 24px; box-shadow: 0 14px 40px rgba(13,51,37,.04); cursor: pointer; transition: transform .25s, box-shadow .25s; }
@@ -398,6 +406,8 @@ svg { flex: 0 0 auto; }
   .section-heading--split { grid-template-columns: 1fr; gap: 25px; }
   .explorer-tools { grid-template-columns: 1fr; gap: 15px; }
   .filter-chips { justify-content: flex-start; margin-inline: -16px; padding-inline: 16px; }
+  .region-filter { width: 100%; margin-top: -4px; justify-content: flex-start; overflow: hidden; border-radius: 18px; }
+  .region-chips { justify-content: flex-start; }
   .room-grid { grid-template-columns: 1fr; }
   .room-card { min-height: 390px; }
   .support-bridge__inner { grid-template-columns: 1fr; gap: 45px; }
@@ -448,6 +458,9 @@ svg { flex: 0 0 auto; }
   .section-heading h2 { font-size: 39px; }
   .section-heading--split > p br { display: none; }
   .room-card { padding: 22px; }
+  .region-filter { padding: 10px; gap: 8px; }
+  .region-filter__label { padding-left: 2px; font-size: 10px; }
+  .region-chips button { min-height: 38px; padding-inline: 12px; }
   .support-bridge h2 { font-size: 39px; }
   .support-card { padding: 18px; gap: 13px; }
   .support-card__icon { width: 47px; }

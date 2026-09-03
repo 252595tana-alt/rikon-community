@@ -28,7 +28,7 @@ export default async function RoomPage({ params }: RoomPageProps) {
           <Link className="back-link" href="/#rooms"><ArrowLeft aria-hidden="true" /> 相談部屋一覧</Link>
           <div className="room-detail__title-row">
             <div>
-              <p className="eyebrow"><span /> ANONYMOUS ROOM</p>
+              <p className="eyebrow"><span /> {room.region === "national" ? "ANONYMOUS ROOM" : `${room.regionLabel}・地域の部屋`}</p>
               <h1>{room.title}</h1>
               <p>{room.description}</p>
             </div>
