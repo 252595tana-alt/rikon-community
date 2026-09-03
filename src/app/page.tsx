@@ -49,10 +49,7 @@ export default function Home() {
             </ul>
           </div>
 
-          <div className="hero-art" aria-label="それぞれの悩みが安心できる場所へつながっていく様子">
-            <div className="orbit-label orbit-label--one"><span />お金・生活</div>
-            <div className="orbit-label orbit-label--two"><span />子育て</div>
-          </div>
+          <div className="hero-art" aria-hidden="true" />
         </div>
         <a className="scroll-cue" href="#rooms">
           <span>SCROLL</span><ArrowDown aria-hidden="true" />

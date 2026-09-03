@@ -111,10 +111,6 @@ svg { flex: 0 0 auto; }
 .css-orbit-fallback::before, .css-orbit-fallback::after { content: ""; position: absolute; inset: 16%; border: 1px solid rgba(243,160,135,.42); border-radius: 50%; }
 .css-orbit-fallback::after { inset: -55%; border-color: rgba(47,128,99,.1); transform: rotate(24deg) scaleY(.48); }
 .webgl-loading { position: absolute; inset: 0; background: radial-gradient(circle at 52% 50%, rgba(188,235,213,.3), transparent 36%); }
-.orbit-label { position: absolute; z-index: 4; display: flex; align-items: center; gap: 7px; color: var(--ink-soft); font-size: 9px; font-weight: 700; letter-spacing: .08em; }
-.orbit-label span { width: 5px; height: 5px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 12px var(--coral); }
-.orbit-label--one { left: 7%; top: 28%; }
-.orbit-label--two { right: 14%; top: 24%; }
 .scroll-cue { position: absolute; z-index: 4; left: 50%; bottom: 18px; min-width: 44px; min-height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: var(--ink-soft); font-size: 8px; font-weight: 800; letter-spacing: .25em; transform: translateX(-50%); }
 .scroll-cue svg { width: 13px; }
 
@@ -401,7 +397,6 @@ svg { flex: 0 0 auto; }
   .hero-actions .button { width: min(260px, 100%); min-width: 0; flex: 0 0 auto; }
   .trust-list { justify-content: center; gap: 10px; }
   .trust-list li + li { padding-left: 10px; }
-  .orbit-label--one { left: 22%; }.orbit-label--two { right: 21%; }
   .scroll-cue { display: none; }
   .rooms-section, .support-bridge { padding: 82px 0; }
   .section-heading--split { grid-template-columns: 1fr; gap: 25px; }
@@ -428,14 +423,14 @@ svg { flex: 0 0 auto; }
   .room-preview__grid { grid-template-columns: 1fr; }
   .join-card { position: relative; top: 0; }
   .login-page { grid-template-columns: 1fr; }
-  .login-visual { min-height: 330px; }
-  .login-panel { padding: 30px 24px 80px; }
-  .login-panel__inner { margin-top: 60px; }
+  .login-visual { display: none; }
+  .login-panel { padding: 30px 24px 88px; }
+  .login-panel__inner { margin: 42px auto 30px; }
 }
 
 @media (max-width: 600px) {
   body { padding-bottom: 68px; }
-  .mobile-nav { position: fixed; z-index: 100; left: 0; right: 0; bottom: 0; height: calc(67px + env(safe-area-inset-bottom)); padding: 7px 12px env(safe-area-inset-bottom); display: grid; grid-template-columns: repeat(3,1fr); background: rgba(255,255,255,.96); border-top: 1px solid rgba(10,23,19,.11); backdrop-filter: blur(18px); }
+  .mobile-nav { position: fixed; z-index: 100; left: 0; right: 0; bottom: 0; height: calc(67px + env(safe-area-inset-bottom)); padding: 7px 8px env(safe-area-inset-bottom); display: grid; grid-template-columns: repeat(4,1fr); background: rgba(255,255,255,.96); border-top: 1px solid rgba(10,23,19,.11); backdrop-filter: blur(18px); }
   .mobile-nav a { min-height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: #465f54; font-size: 12px; font-weight: 750; }
   .mobile-nav svg { width: 19px; }
   .mobile-nav a.is-active { color: #237652; }
@@ -486,14 +481,15 @@ svg { flex: 0 0 auto; }
   .locked-post { padding: 19px; grid-template-columns: 1fr; }
   .locked-post__avatar { width: 34px; }
   .join-dialog__content { padding: 35px 24px 28px; }
-  .emergency-hero { padding-bottom: 60px; }
-  .emergency-hero .eyebrow { margin-top: 45px; }
-  .emergency-hero h1 { font-size: 42px; }
+  .emergency-hero { padding: 28px 0 36px; }
+  .emergency-hero .eyebrow { margin-top: 22px; }
+  .emergency-hero h1 { font-size: 38px; line-height: 1.22; }
+  .emergency-hero .shell > p:last-child { margin-top: 18px; font-size: 15px; line-height: 1.8; }
+  .emergency-list { padding: 32px 0 88px; }
   .emergency-card { padding: 22px; grid-template-columns: 1fr; gap: 17px; }
   .emergency-card div > a:not(.source-link) { font-size: 28px; }
-  .login-visual { min-height: 260px; }
-  .login-visual::before { width: 340px; }
-  .login-visual strong { font-size: 32px; }
+  .login-panel { padding: 24px 24px 88px; }
+  .login-panel__inner { margin-top: 34px; }
   .login-panel h1 { font-size: 34px; }
 }
 

@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ClipboardCheck, House, UserRound } from "lucide-react";
+import { ClipboardCheck, House, MapPinned, UserRound } from "lucide-react";
 
 const items = [
   { href: "/", label: "ホーム", icon: House },
   { href: "https://rikon-window.vercel.app/diagnosis/start", label: "離婚診断", icon: ClipboardCheck, external: true },
+  { href: "https://252595tana-alt.github.io/rikon-support-navi-prototype/", label: "支援ナビ", icon: MapPinned, external: true },
   { href: "/login", label: "ログイン", icon: UserRound },
 ];
 
