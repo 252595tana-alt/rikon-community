@@ -13,6 +13,7 @@ import {
   MapPin,
   MessageCircle,
   Search,
+  ShieldCheck,
   UsersRound,
   WalletCards,
 } from "lucide-react";
@@ -60,6 +61,10 @@ export function CommunityExplorer() {
     });
   }, [category, query, region]);
 
+  const activeCategoryLabel = category === "all" ? "" : filters.find((filter) => filter.value === category)?.label ?? "";
+  const activeRegionLabel = region === "all" ? "" : regionFilters.find((filter) => filter.value === region)?.label ?? "";
+  const resultScope = [activeRegionLabel, activeCategoryLabel].filter(Boolean).join("・");
+
   return (
     <div className="community-explorer">
       <div className="explorer-tools">
@@ -105,7 +110,14 @@ export function CommunityExplorer() {
         </div>
       </div>
 
-      <p className="results-count" aria-live="polite">{visibleRooms.length}件の相談部屋</p>
+      <p className="region-filter-note">
+        <ShieldCheck aria-hidden="true" />
+        現在は徳島県・徳島市を先行公開しています。選んだ地域が投稿に表示されることはありません。
+      </p>
+
+      <p className="results-count" aria-live="polite">
+        {resultScope && <>{resultScope}：</>}{visibleRooms.length}件の相談部屋
+      </p>
       <div className="room-grid">
         {visibleRooms.map((room) => {
           const Icon = iconMap[room.icon];
@@ -114,6 +126,8 @@ export function CommunityExplorer() {
               className={`room-card room-card--${room.accent}`}
               href={`/rooms/${room.slug}`}
               aria-label={`${room.title}を見る`}
+              data-room-region={room.region}
+              data-room-categories={room.categories.join(",")}
               key={room.slug}
             >
               <div className="room-card__header">
